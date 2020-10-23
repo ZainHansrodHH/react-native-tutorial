@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
-import { ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
+import { FlatList, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
 
 export default function App() {
   return (
@@ -66,4 +66,24 @@ const wordsToPizza = (text) => {
     pizzaWord += wordSplit[i];
   }
   return pizzaWord;
+}
+
+//Flat list component example
+const FlatListExample = () => {
+  return(
+    <View>
+      <FlatList data={[
+          {key: 'Devin'},
+          {key: 'Dan'},
+          {key: 'Dominic'},
+          {key: 'Jackson'},
+          {key: 'James'},
+          {key: 'Joel'},
+          {key: 'John'},
+          {key: 'Jillian'},
+          {key: 'Jimmy'},
+          {key: 'Julie'},
+        ]} renderItem ={({item}) => <Text style={styles.item}>{item.key}</Text>}/>
+    </View>
+  )
 }
