@@ -11,6 +11,8 @@ export default function App() {
       <Cat name="Fluffi boi"></Cat>
       <Text>Handling Text Input</Text>
       <PizzaTranslate></PizzaTranslate>
+      <FlatListExample></FlatListExample>
+      <SectionListExample></SectionListExample>
     </View>
   );
 }
@@ -84,6 +86,23 @@ const FlatListExample = () => {
           {key: 'Jimmy'},
           {key: 'Julie'},
         ]} renderItem ={({item}) => <Text style={styles.item}>{item.key}</Text>}/>
+    </View>
+  )
+}
+
+//Section List component example
+const SectionListExample = () => {
+  return(
+    <View>
+      <SectionList 
+      sections={[
+        {title: 'A', data: ['Ayob', 'Ahmad', 'Ayman']},
+        {title: 'B', data: ['Bilal', 'Bobby', 'Bossman']}
+      ]}
+      renderItem={({item}) => <Text>{item}</Text>}
+      renderSectionHeader={({section}) => <Text>{section.title}</Text>}
+      keyExtractor={(item, index) => index}
+      />
     </View>
   )
 }
